@@ -16,12 +16,17 @@ app.start = function() {
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
     }
   });
+
 };
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function(err) {
   if (err) throw err;
+  /**In fact you can also add routes right in server.js using the Express API.  For example, add this call to app.use() just before the call to app.start():**/
+  app.use('/express-status', function(req, res, next) {
+    res.json({ running: true });
+  });
 
   // start the server if `$ node server.js`
   if (require.main === module)
