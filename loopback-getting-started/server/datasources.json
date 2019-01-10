@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "coffee_shops": {
+    "host": "",
+    "port": 27017,
+    "url": "",
+    "database": "shops",
+    "password": "",
+    "name": "coffee_shops",
+    "user": "",
+    "connector": "mongodb"
   }
 }
